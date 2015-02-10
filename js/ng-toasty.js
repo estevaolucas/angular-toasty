@@ -16,22 +16,32 @@ angular.module('toasty', ['ngAnimate'])
             this.pop.success = function(options) {
                 options.type = 'success';
                 that.pop(options);
+
+                return that.toasty;
             }
             this.pop.wait = function(options) {
                 options.type = 'wait';
                 that.pop(options);
+
+                return that.toasty;
             }
             this.pop.warning = function(options) {
                 options.type = 'warning';
                 that.pop(options);
+
+                return that.toasty;
             }
             this.pop.error = function(options) {
                 options.type = 'error';
                 that.pop(options);
+
+                return that.toasty;
             }
             this.pop.info = function(options) {
                 options.type = 'info';
                 that.pop(options);
+
+                return that.toasty;
             }
             this.clear = function() {
                 $rootScope.$broadcast('toasty-clearToasties');
@@ -148,7 +158,7 @@ angular.module('toasty', ['ngAnimate'])
                     scope.$on('toasty-clearToasties', function() {
                         scope.toasties.splice(0, scope.toasties.length);
                     });
-                    
+
                     scope.$on('toasty-removeToasty', function(ev, id) {
                         scope.removeToasty(id);
                     });

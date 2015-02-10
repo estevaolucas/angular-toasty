@@ -13,7 +13,7 @@ angular.module('main', ['ngAnimate', 'toasty'])
     };
 
     $scope.pop = function() {
-        toasty.pop.success({
+        var t = toasty.pop.success({
             title: "Success!",
             msg: 'Click to change me.',
             timeout: 0,
@@ -34,6 +34,8 @@ angular.module('main', ['ngAnimate', 'toasty'])
                 console.log(toasty.id + ' has been removed!');
             }
         });
+
+        console.log('t', t);
 
         toasty.pop.warning({
             title: 'Warning!',
